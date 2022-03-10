@@ -1,4 +1,11 @@
-import { createStore } from 'redux'
-import {notesReducer} from './notesReducer'
+import { createStore } from 'redux';
+import { CounterState } from './reducers/counterReducer';
+import reducers from './reducers/index';
+import { NotesState } from './reducers/notesReducer';
 
-export const store = createStore(notesReducer)
+export interface RootState {
+    counter?: CounterState,
+    notes?: NotesState
+}
+
+export const store = createStore(reducers);
